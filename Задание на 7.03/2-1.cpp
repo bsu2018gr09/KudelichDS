@@ -6,7 +6,7 @@ using namespace std;
 void giveMemory(int **&A, int N, int M);
 void initArray(int **A, int N, int M);
 void printArray(int**A, int N, int M);
-int counting(int **A, int &j, int N);
+int counting(int **A, int j, int N);
 void shift(int **A, int N, int M);
 void freeArray(int **&A, int N);
 int main() {
@@ -47,7 +47,7 @@ void printArray(int**A, int N, int M) {
 	}
 	cout << "\n";
 }
-int counting(int **A, int &j, int N) {
+int counting(int **A, int j, int N) {
 	int c=0;
 	for (int i= 0; i < N; ++i) {
 		if (!(A[i][j] % 2)) {
