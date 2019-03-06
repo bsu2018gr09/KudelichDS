@@ -8,6 +8,7 @@ void initArray(int **A, int N, int M);
 void printArray(int**A, int N, int M);
 int counting(int **A, int &j, int N);
 void shift(int **A, int N, int M);
+void freeArray(int **&A, int N);
 int main() {
 	setlocale(LC_ALL, "rus");
 	int N, M;
@@ -20,6 +21,7 @@ int main() {
 	initArray(A, N, M);
 	printArray(A, N, M);
 	shift(A, N, M);
+	freeArray(A, N);
 	system("pause");
 }
 void giveMemory(int **&A, int N, int M) {
@@ -70,4 +72,10 @@ void shift(int **A, int N, int M) {
 		}
 	}
 	printArray(A, N, M);
+}
+void freeArray(int **&A, int N) {
+	for (int i = 0; i < N; i++) {
+		A[i] = nullptr;
+	}
+	delete[]A;
 }
