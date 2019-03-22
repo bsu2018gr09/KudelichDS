@@ -81,4 +81,5 @@ void freeArray(int **&A, int N) {
 		A[i] = nullptr;
 	}
 	delete[]A;
+	A=nullptr;
 }
