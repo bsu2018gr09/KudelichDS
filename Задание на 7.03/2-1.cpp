@@ -28,6 +28,9 @@ void giveMemory(int **&A, int N, int M) {
 	A = new(nothrow)int*[N];
 	for (int i = 0; i < N; ++i) {
 		A[i] = new(nothrow)int[M];
+		if (!A[i]) {
+		cout << "error" << "\n";
+	}
 	}
 }
 void initArray(int **A, int N, int M) {
