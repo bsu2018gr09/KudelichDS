@@ -1,13 +1,13 @@
-﻿#include<iostream>
-#include<time.h>
 //В массиве размера N, заполненного случ.числами от 0 до 10, подсчитать количество элементов, встречающихся более одного раза.
+#include<iostream>
+#include<time.h>
 
 using namespace std;
 void givememory(int*&A, int N);
 void randominitarray(int*A, int N);
 void howmanycopies(int* A, int N);
 void printArray(int*A, int N);
-void deletememory(int*A);
+void deletememory(int*&A);
 
 int main() {
 	setlocale(LC_ALL, "rus");
@@ -63,7 +63,8 @@ void printArray(int*A, int N) {
 	}
 	cout << "\n";
 }
-void deletememory(int*A) {
-	delete A;
+void deletememory(int*&A) {
+	delete[] A;
+	A=nullptr;
 }
 
