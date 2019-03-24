@@ -1,11 +1,12 @@
-﻿#include<iostream>
-#include<time.h>
 //Расположить в порядке возрастания элементы массива А(N), начиная с k-го элемента.
+#include<iostream>
+#include<time.h>
 using namespace std;
+
 void giveMemory(int*&A, int N);
 void randomInitArray(int*A, int N);
 void printArray(int*A, int N);
-void deleteMemory(int*A);
+void deleteMemory(int*&A);
 void ascendingArray(int*A, int N, int k);
 
 int main() {
@@ -50,8 +51,9 @@ void printArray(int*A, int N) {
 	}
 	cout << "\n";
 }
-void deleteMemory(int*A) {
-	delete A;
+void deleteMemory(int*&A) {
+	delete []A;
+	A=nullptr;
 }
 void ascendingArray(int*A, int N, int k) {
 	int l = 1, i,j;
