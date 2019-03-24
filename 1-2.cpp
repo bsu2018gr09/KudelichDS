@@ -1,12 +1,13 @@
-﻿#include<iostream>
-#include<time.h>
-using namespace std;
 //Положительные элементы массива А(N) переставить в конец массива, сохраняя порядок следования. 
 //Отрицательные элементы расположить в порядке убывания. Дополнительный массив не использовать.
+#include<iostream>
+#include<time.h>
+using namespace std;
+
 void giveMemory(int*&A, int N);
 void randomInitArray(int*A, int N);
 void printArray(int*A, int N);
-void deleteMemory(int*A);
+void deleteMemory(int*&A);
 void shiftPositive(int*A, int N);
 void shiftArray(int*A, int N, int &k);
 void descendingNegative(int *A, int N, int &k);
@@ -83,6 +84,7 @@ void shiftArray(int*A, int N, int &k) {
 		swap(*(A + i), *(A + j));
 	}
 }
-void deleteMemory(int*A) {
-	delete A;
+void deleteMemory(int*&A) {
+	delete []A;
+	A=nullptr;
 }
