@@ -1,14 +1,14 @@
-﻿#include<iostream>
-#include<time.h>
-using namespace std;
 //Массив чисел размера N проинициализировать случайными числами из промежутка от - N до N.
 //Написать функцию циклического сдвига элементов массива вправо на k элементов.
+#include<iostream>
+#include<time.h>
+using namespace std;
 
 void givememory(int*&A, int N);
 void randominitarray(int*A, int N);
 void shiftarray(int*A, int N,int k);
 void printArray(int*A, int N);
-void deletememory(int*A);
+void deletememory(int*&A);
 
 int main() {
 	setlocale(LC_ALL, "rus");
@@ -59,6 +59,7 @@ void printArray(int*A, int N) {
 	}
 	cout << "\n";
 }
-void deletememory(int*A) {
-	delete A;
+void deletememory(int*&A) {
+	delete[] A;
+	A=nullptr;
 }
