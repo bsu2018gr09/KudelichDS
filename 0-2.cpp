@@ -1,11 +1,12 @@
-﻿#include<iostream>
+//В массиве размера N, заполненного случ.числами от 0 до 10, определить максимальную длину последовательности равных элементов.
+#include<iostream>
 #include<time.h>
 using namespace std;
-//В массиве размера N, заполненного случ.числами от 0 до 10, определить максимальную длину последовательности равных элементов.
+
 void givememory(int*&A, int N);
 void randominitarray(int*A, int N);
 void findlonger(int*A, int N);
-void deletememory(int*A);
+void deletememory(int*&A);
 void printArray(int*A, int N);
 
 int main() {
@@ -57,8 +58,9 @@ void findlonger(int*A, int N) {
 		cout << "Нет чисел,составляющих последовательность " << "\n";
 	}
 }
-void deletememory(int*A) {
-	delete A;
+void deletememory(int*&A) {
+	delete[] A;
+	A=nullptr;
 }
 void printArray(int*A, int N) {
 	int i;
