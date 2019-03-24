@@ -1,14 +1,14 @@
-﻿#include<iostream>
+//Элементы массива А(N), значения которых – простые числа, расположить в порядке возрастания, 
+//не нарушая порядка следования других элементов.
+#include<iostream>
 #include<time.h>
 #include<math.h>
 using namespace std;
-//Элементы массива А(N), значения которых – простые числа, расположить в порядке возрастания, 
-//не нарушая порядка следования других элементов.
 
 void giveMemory(int*&A, int N);
 void randomInitArray(int*A, int N);
 void printArray(int*A, int N);
-void deleteMemory(int*A);
+void deleteMemory(int*&A);
 void simpleNumber(int*A, int N, int &i, int &k);
 void findSimpleNumbers(int*A, int N);
 
@@ -46,8 +46,9 @@ void printArray(int*A, int N) {
 	}
 	cout << "\n";
 }
-void deleteMemory(int*A) {
-	delete A;
+void deleteMemory(int*&A) {
+	delete []A;
+	A=nullptr;
 }
 void findSimpleNumbers(int*A, int N) {
 	int l =1,i,k,j;
