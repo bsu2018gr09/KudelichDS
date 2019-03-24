@@ -1,6 +1,6 @@
-﻿#include<iostream>
-#include<iomanip>
 //В массиве А(N, M) расположить столбцы по возрастанию количества чётных элементов в столбце
+#include<iostream>
+#include<iomanip>
 using namespace std;
 
 void giveMemory(int **&A, int N, int M);
@@ -8,6 +8,7 @@ void initArray(int **A, int N, int M);
 void printArray(int**A, int N, int M);
 int counting(int **A, int &j, int N);
 void shift(int **A, int N, int M);
+void deleteMemory(int **&A,int N);
 int main() {
 	setlocale(LC_ALL, "rus");
 	int N, M;
@@ -20,18 +21,22 @@ int main() {
 	initArray(A, N, M);
 	printArray(A, N, M);
 	shift(A, N, M);
+	deleteMemory(A,N);
 	system("pause");
 }
 void giveMemory(int **&A, int N, int M) {
 	A = new(nothrow)int*[N];
 	for (int i = 0; i < N; ++i) {
-		A[i] = new(nothrow)int[M];
+		*(A+i) = new(nothrow)int[M];
+		if(!*(A+i)){
+			cout<<"error"<<"\n";
+		}
 	}
 }
 void initArray(int **A, int N, int M) {
 	for (int i = 0, b = 1; i < N; ++i) {
 		for (int j = 0; j < M; ++j) {
-			A[i][j] = b;
+			*(*(A+i)+j) = b;
 			++b;
 		}
 	}
@@ -39,7 +44,7 @@ void initArray(int **A, int N, int M) {
 void printArray(int**A, int N, int M) {
 	for (int i = 0; i < N; ++i) {
 		for (int j = 0; j < M; ++j) {
-			cout << setw(2) << A[i][j] << ";";
+			cout << setw(2) << *(*(A+i)+j) << ";";
 		}
 		cout << "\n";
 	}
@@ -48,7 +53,7 @@ void printArray(int**A, int N, int M) {
 int counting(int **A, int &j, int N) {
 	int c=0;
 	for (int i= 0; i < N; ++i) {
-		if (!(A[i][j] % 2)) {
+		if (!(*(*(A+i)+j) % 2)) {
 			c++;
 		}
 	}
@@ -64,10 +69,18 @@ void shift(int **A, int N, int M) {
 			if (a > b) {
 				f = 1;
 				for (int i = 0; i < N; ++i) {
-					swap(A[i][j1], A[i][j2]);
+					swap(*(*(A+i)+j1),*(*(A+i)+j2));
 				}
 			}
 		}
 	}
 	printArray(A, N, M);
+}
+void deleteMemory(int **&A,int N){
+	for(int i=0;i<N;i++){
+		delete[]*(A+i);
+		*(A+i)=nullptr;
+	}
+	delete[]A;
+	A=nullptr;
 }
