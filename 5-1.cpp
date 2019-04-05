@@ -1,4 +1,5 @@
-﻿#include<iostream>
+/*Линейный градиент(начальный цвет-слева, конечный-справа)*/
+#include<iostream>
 #include<fstream>  //где условие задачи? Какой градиент ты делаешь???
 #include<cmath>
 using namespace std;
