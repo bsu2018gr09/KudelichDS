@@ -1,5 +1,6 @@
 ﻿#include<iostream>
 #include<fstream>  
+#include<cmath>
 using namespace std;
 struct color { unsigned char r; unsigned char g; unsigned char b; } c;
 
@@ -27,9 +28,9 @@ int main() {
 	ggg.write( ( char * )&buf , 28 );    //запись 28 байт заголовка bmp
 
 	c.r = r1; c.g = g1; c.b = b1;
-	double dr = ( r2 - r1 ) / step;
-	double dg = ( g2 - g1 ) / step;
-	double db = ( b2 - b1 ) / step;
+	double dr = abs( r2 - r1 ) / step;
+	double dg = abs( g2 - g1 ) / step;
+	double db = abs( b2 - b1 ) / step;
 	int l = 0;
 	for(int i=1;i<=h;++i){
 		for ( int j = 1; j <= w; ++j ) {
