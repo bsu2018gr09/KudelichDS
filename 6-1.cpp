@@ -1,7 +1,7 @@
 ﻿/*
 Возвратное кубическое уравнение. решение возвратного кубического уравнения (Ax^3+Bx^2+Bx+A=0)
 */
-
+//RCE-Returnable Cubic Equation
 #include<iostream>
 #include<iostream>
 #include<iomanip>
