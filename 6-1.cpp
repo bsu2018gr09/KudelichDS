@@ -16,13 +16,13 @@ private:
 	double x2;
 	double x3;
 public:
-	RCE() :A{ 0 } , B{ 0 }{
+	RCE() :A{ 0 } , B{ 0 }{//мне кажется странным выбор 0 и "мусора" внутри х1,х2,х3. Тебя это не смущает????
 		cout << "Default constructor is working" << '\n';
 	}
-	RCE( double A , double B ) :A{ A } , B{ B }{
+	RCE( double A , double B ) :A{ A } , B{ B }{// "мусор" внутри х1,х2,х3. Тебя это не смущает????
 		cout << "Constructor with your coefficients A,B is working" << '\n';
 	}
-	RCE( const RCE& t ) :A{ t.A } , B{ t.B } {
+	RCE( const RCE& t ) :A{ t.A } , B{ t.B } { // предыдущий "мусор" внутри х1,х2,х3. Тебя это не смущает????
 		cout << "Copy constructor is working" << '\n';
 	}
 	~RCE() {
@@ -35,26 +35,26 @@ public:
 		return B;
 	}
 	RCE operator =( const RCE& e ) {
-		return RCE( e.A , e.B );
+		return RCE( e.A , e.B ); // предыдущий "мусор" внутри х1,х2,х3. Тебя это не смущает????
 	}
 	RCE operator +( RCE& a ) {
-		return RCE( getA() + a.getA() , getB() + a.getB() );
+		return RCE( getA() + a.getA() , getB() + a.getB() ); // предыдущий "мусор" внутри х1,х2,х3. Тебя это не смущает????
 	}
 	RCE operator -( RCE& a ) {
-		return RCE( getA() - a.getA() , getB() - a.getB() );
+		return RCE( getA() - a.getA() , getB() - a.getB() ); // предыдущий "мусор" внутри х1,х2,х3. Тебя это не смущает????
 	}
 	RCE operator *( double q ) {
-		return RCE( getA()*q , getB()*q );
+		return RCE( getA()*q , getB()*q ); // предыдущий "мусор" внутри х1,х2,х3. Тебя это не смущает????
 	}
 	RCE operator /( double q ) {
 		if ( q != 0 ) {
-			return RCE( getA() / q , getB() / q );
+			return RCE( getA() / q , getB() / q ); // предыдущий "мусор" внутри х1,х2,х3. Тебя это не смущает????
 		}
 		else {
 			cout << "We can't divide by zero" << "\n";
 		}
 	}
-	void getRoots() {
+	void getRoots() {//public???? Зачем???? Прочитай условие задачи!!!!!
 		if ( ( A == 0 ) && ( B == 0 ) ) {
 			cout << "Infinite number of roots" << "\n";
 		}
