@@ -57,6 +57,9 @@ public:
 					x2 = (-(B - A)) / (2 * A);
 					return f, x1,x2;
 				}
+				else{
+				return x1;
+				}
 			}
 		}
 	}
