@@ -24,6 +24,12 @@ public:
 		getRoots(A, B);
 		cout << "Constructor with your coefficients A,B is working" << '\n';
 	}
+	RCE(const RCE& t) :A{ t.A }, B{ t.B }, f{ t.f }, x1{ t.x1 }, x2{ t.x2 }, x3{ t.x3 } {
+		cout << "Copy constructor is working" << '\n';
+	}
+	~RCE() {
+		cout << "Destructor is working" << '\n';
+	}
 	double getRoots(double A,double B) {
 		if ((A == 0) && (B == 0)) {
 			f = 1;
@@ -62,12 +68,6 @@ public:
 				}
 			}
 		}
-	}
-	RCE(const RCE& t) :A{ t.A }, B{ t.B }, f{ t.f }, x1{ t.x1 }, x2{ t.x2 }, x3{ t.x3 } {
-		cout << "Copy constructor is working" << '\n';
-	}
-	~RCE() {
-		cout << "Destructor is working" << '\n';
 	}
 	double getA() {
 		return A;
