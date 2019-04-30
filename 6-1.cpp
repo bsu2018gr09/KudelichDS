@@ -17,7 +17,7 @@ private:
 	double x2;
 	double x3;
 public:
-	RCE() :A{ 1 }, B{ 1 }, f{ 3 }, x1{ 0 }, x2{ 0 }, x3{ 0 }{
+	RCE() :A{ 1 }, B{ 1 }, f{ 3 }, x1{ -1 }, x2{ 0 }, x3{ 0 }{
 		cout << "Default constructor is working" << '\n';
 	}
 	RCE(double A, double B) :A{ A }, B{ B }, f{ 2 }, x1{ 0 }, x2{ 0 }, x3{ 0 }{
