@@ -1,7 +1,7 @@
 /*
 Возвратное кубическое уравнение. решение возвратного кубического уравнения (Ax^3+Bx^2+Bx+A=0)
 */
-
+//RCE-Returnable Cubic Equation-Возвратное кубическое уравнение
 #include<iostream>
 #include<iostream>
 #include<iomanip>
@@ -12,7 +12,7 @@ class RCE
 private: 
 	double A;
 	double B;
-	int f;
+	int f;//это флаг для определения того, сколько корней в конечном счёте выводить на экран
 	double x1;
 	double x2;
 	double x3;
