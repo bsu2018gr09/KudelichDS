@@ -1,5 +1,5 @@
-//Даны точки плоскости своими координатами в виде двух одномерных массивов (случайные числа).
-//Точки плоскости рассортировать по возрастанию расстояния до прямой ax + by + c = 0.
+//Г„Г Г­Г» ГІГ®Г·ГЄГЁ ГЇГ«Г®Г±ГЄГ®Г±ГІГЁ Г±ГўГ®ГЁГ¬ГЁ ГЄГ®Г®Г°Г¤ГЁГ­Г ГІГ Г¬ГЁ Гў ГўГЁГ¤ГҐ Г¤ГўГіГµ Г®Г¤Г­Г®Г¬ГҐГ°Г­Г»Гµ Г¬Г Г±Г±ГЁГўГ®Гў (Г±Г«ГіГ·Г Г©Г­Г»ГҐ Г·ГЁГ±Г«Г ).
+//Г’Г®Г·ГЄГЁ ГЇГ«Г®Г±ГЄГ®Г±ГІГЁ Г°Г Г±Г±Г®Г°ГІГЁГ°Г®ГўГ ГІГј ГЇГ® ГўГ®Г§Г°Г Г±ГІГ Г­ГЁГѕ Г°Г Г±Г±ГІГ®ГїГ­ГЁГї Г¤Г® ГЇГ°ГїГ¬Г®Г© ax + by + c = 0.
 #include <iostream>
 #include <ctime>
 using namespace std;
@@ -15,7 +15,7 @@ void printArray( int * arr , int N ) {
 }
 void findDistance( int *d , int * X , int *Y , int A , int B , int C , int N ) {
 	for ( int i = 0; i < N; ++i ) {
-		d[ i ] = abs( ( A * X[ i ] + B * Y[ i ] + C ) / sqrt( A * A + B * B ) );
+		d[ i ] = abs( ( A * X[ i ] + B * Y[ i ] + C ) / sqrt( A * A + B * B ) );//РїР»РѕС…Рѕ. РќРёРєР°РєРѕР№ РѕРїС‚РёРјРёР·Р°С†РёРё
 	}
 }
 void sortCoords( int * d , int * X , int * Y , int N ) {
@@ -42,7 +42,7 @@ int main()
 	srand( time( NULL ) );
 	setlocale( LC_ALL , "Russian" );
 	int N;
-	cout << "Введите количество точек ";
+	cout << "Г‚ГўГҐГ¤ГЁГІГҐ ГЄГ®Г«ГЁГ·ГҐГ±ГІГўГ® ГІГ®Г·ГҐГЄ ";
 	cin >> N;
 	int *X = new int[ N ]; 
 	if ( !X ) { cout << "Error"; return 0; }
@@ -57,7 +57,7 @@ int main()
 	printArray( Y , N ); 
 	cout << '\n';
 	int A = 0 , B = 0 , C = 0;
-	cout << "Введите A , B , C  = 0\n";
+	cout << "Г‚ГўГҐГ¤ГЁГІГҐ A , B , C  = 0\n";
 	cin >> A >> B >> C; 
 	cout << '\n';
 	int *d = new int[ N ];
