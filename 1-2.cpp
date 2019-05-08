@@ -5,7 +5,7 @@
 using namespace std;
 
 void giveMemory(int*&A, int N);
-void randomInitArray(int*A, int N);
+void randomInitArray(int*A, int N); 
 void printArray(int*A, int N);
 void deleteMemory(int*&A);
 void shiftPositive(int*A, int N);
