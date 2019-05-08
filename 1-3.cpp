@@ -22,7 +22,7 @@ int main() {
 	giveMemory(A, N);
 	randomInitArray(A, N);
 	printArray(A, N);
-	findSimpleNumbers(A, N);
+	findSimpleNumbers(A, N);//никакой оптимизации
 	printArray(A, N);
 	deleteMemory(A);
 	system("pause");
