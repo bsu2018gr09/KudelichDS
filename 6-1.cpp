@@ -24,7 +24,7 @@ public:
 	RCE() :A{ 1 }, B{ 1 }, f{ 1 }, x1{ -1 }, x2{ 0 }, x3{ 0 }{
 		cout << "Default constructor is working" << '\n';
 	}
-	RCE(double A, double B) :A{ A }, B{ B }, f{ 2 }, x1{ 0 }, x2{ 0 }, x3{ 0 }{
+	RCE(double A, double B) :A{ A }, B{ B }, f{ 2 }, x1{ 0 }, x2{ 0 }, x3{ 0 }{// а почему f будем инициализировать 2? 
 		getRoots(A, B,f,x1,x2,x3);
 		cout << "Constructor with your coefficients A,B is working" << '\n';
 	}
