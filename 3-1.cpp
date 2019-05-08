@@ -15,7 +15,7 @@ int main() {
 	giveMemory(str);
 	cin.getline(str,MAX);
 	fingingWords(str);	
-	deleteMemory( str );
+	deleteMemory( str );// и где печатает "сколько" слов???
 	system( "pause" );
 }
 void giveMemory( char*&str) {
