@@ -7,7 +7,7 @@ using namespace std;
 
 void giveMemory( char*&str);
 void fingingWords( char*str );
-void findingWordsWithSymbol( char*str , int k,int &i);
+void findingWordsWithSymbol( char*str , int k,int &i,int &N);
 void deleteMemory( char*&str );
 
 int main() {
@@ -26,25 +26,28 @@ void giveMemory( char*&str) {
 }
 void fingingWords( char*str ) {
 	int k = -1;
+	int N = 0;
 	for ( int i = 0; i < strlen( str ); i++ ) {
 		if ( *( str + i ) != ' ' ) {
 			if ( k == -1 ) {
 				k = i;
 			}
-			findingWordsWithSymbol(str,k,i);
+			findingWordsWithSymbol(str,k,i,N);
 		}
 		else {
 			k = -1;
 		}
 	}
+	cout<<N<<"\n";
 }
-void findingWordsWithSymbol( char*str , int k , int &i ) {
+void findingWordsWithSymbol( char*str , int k , int &i ,int &N) {
 	if ( *( str + i ) == 'A') {
 		while ( ( *( str + k ) != ' ' ) && ( k < strlen( str ) ) ) {
 			cout << *( str + k );
 			k++;
 		}
 		i = k-1;
+		N++;
 		cout << "\n";
 	}
 }
